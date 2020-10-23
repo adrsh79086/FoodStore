@@ -4,6 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FoodStore</title>
     <!--font awesome-->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
     <link rel="stylesheet" href="fontawesome-free-5.15.0-web/css/all.css" />
     <!--custom css styling -->
     <link rel="stylesheet" href="styles.css" />
@@ -16,66 +19,106 @@
           <i class="fas fa-bars"></i>
         </span>
         <!---go from here-->
-        <h1>FoodStore</h1>
+        <h1 >FoodStore</h1>
         <div class="cart-btn">
           <span class="nav-icon"> <i class="fas fa-cart-plus"></i></span>
           <div class="cart-items">0</div>
         </div>
       </div>
     </nav>
-    <!--end of nav-->
+
+<div class="carousel" data-flickity='{ "wrapAround": true }'>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+</div>
+
+<!--categories section -->
+<div class="ctg-section">
+        <h2>Categories</h2>
+
+
+</div>
+        <div class="ctg">
+   <div class="naming1 "> <img src="images/fruits.png" class="size1" alt="Fruits" >
+   <div class="name1">Fruits</div>
+
+  </div>
+    
+   <div class="naming2"> <img src="images/vegetables.png" class="size2" alt="Fruits">
+      <div class="name2">Veggies</div>
+    
+    </div>
+
+    <div class="naming3"><img src="images/milk.png" class="size3" alt="Fruits">
+  <div class="name3">Dairy</div></div>
+
+</div>
+
+<!--end of categories section-->
+
     <!--hero -->
-    <header class="hero">
+    <!-- <header class="hero">
       <div class="banner">
         <h1 class="banner-title">About us</h1>
         <button class="banner-btn">Start shopping</button>
       </div>
-    </header>
+    </header> -->
 
     <!--end of hero-->
     <!--products-->
     <section class="products">
       <div class="section-title">
-        <h2>Categories</h2>
+        
       </div>
+<!-- categories  -->
 
+
+
+ 
+  
+
+
+
+
+<!-- end of categories -->
+<hr>
+<div class="best-sellers">
+<h1>Best-sellers</h1> 
+</div>
       <div class="products-center">
         
+
        </div>
        
     </section>
 
     <!-- ending of products -->
     <!--cart -->
-    <!-- <div class="cart-overlay">
+     <div class="cart-overlay">
       <div class="cart">
         <span class="close-cart">
           <i class="fas fa-window-close"></i>
         </span>
-        <h2>Cart itmes</h2>
-        <div class="cart-conten">
-          items inside the cart 
+        <h2>your cart</h2>
+        <div class="cart-content">
+          <!-- items inside the cart 
           <div class="cart-item">
-            <img src="./images/product-1.jpeg" alt="product1" />
-            <div>
-              <h4>product1</h4>
-              <h5>45ruppee</h5>
-              <span class="remove-item">remove</span>
-            </div>
-            <div>
-              <i class="fas fa-chevron-up"> </i>
-              <p class="item-amount">1</p>
-              <i class="fas fa-chevron-down"> </i>
-            </div>
+             -->
           </div>
-         end of cart
           <div class="cart-footer">
             <h3>total : INR <span class="cart-total">0</span></h3>
             <buttom class="clear-cart banner-btn"> clear </buttom>
           </div>
         </div>
       </div>
-    </div> -->
+    </div> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
     <script src="app.js"></script>
   </body>
 </html>

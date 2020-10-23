@@ -22,21 +22,38 @@ body {
 .navbar {
   position: sticky;
   top: 0;
-  height: 60px;
+  height: 80px;
   width: 100%;
   display: flex;
-  align-items: center;
-  background: rgb(231, 226, 221);
+  background: rgb(234, 245, 170);
   z-index: 1;
+  box-shadow: 2px 1px 6px rgb(169, 195, 20);
+  align-items: center;
+  transition: 0.3s;
+}
+.navbar:hover {
+  background: linear-gradient(0deg, rgb(209, 226, 113), rgb(169, 195, 20));
+  animation: navbar 5s ease-in-out infinite;
+  background-size: 400% 400%;
+  box-shadow: 2px 4px 5px rgb(169, 195, 20);
+}
+@keyframes navbar {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .navbar-center {
   width: 100%;
   max-width: 1170px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;
 }
 .nav-icon {
   font-size: 1.5rem;
@@ -55,6 +72,63 @@ body {
   color: var(--mainWhite);
 }
 /* --------------- End of Navbar ---------------- */
+/* Navbar for categories */
+/* .categories {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+}
+.ctg-align {
+  margin-left: 33.3%;
+} */
+.best-sellers {
+  font-family: "Fira Sans", sans-serif;
+  margin-top: 50px;
+  text-align: center;
+}
+.ctg-section {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.ctg {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.size1,
+.name1 {
+  position: relative;
+}
+.size2,
+.name2 {
+  margin-left: 4rem;
+  position: relative;
+}
+.size3,
+.name3 {
+  margin-left: 4rem;
+}
+.size1,
+.size2,
+.size3 {
+  height: 50px;
+  width: 50px;
+  transition: 0.2s;
+}
+.naming1:hover,
+.naming2:hover,
+.naming3:hover {
+  opacity: 0.7;
+  transition: 0.2s;
+  color: red;
+}
+
+/*End for categories */
+
 /* --------------- Hero ---------------- */
 .hero {
   min-height: calc(100vh - 60px);
@@ -109,10 +183,11 @@ body {
   margin: 0 auto;
   max-width: 1170px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-column-gap: 1.5rem;
   grid-row-gap: 2rem;
 }
+
 .img-container {
   position: relative;
   overflow: hidden;
@@ -128,7 +203,7 @@ body {
   letter-spacing: var(--mainSpacing);
   font-weight: bold;
   transition: var(--mainTransition);
-  transform: translateX(110%);
+  transform: translateX(100%);
   cursor: pointer;
 }
 .bag-btn:hover {
@@ -261,3 +336,36 @@ body {
 }
 
 /* --------------- End of Cart ---------------- */
+/* external css: flickity.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.carousel {
+  margin-top: 10px;
+  background: #eee;
+}
+
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: white;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: black;
+}
