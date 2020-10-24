@@ -23,37 +23,23 @@ body {
   position: sticky;
   top: 0;
   height: 80px;
-  width: 100%;
+  width: 100vw;
   display: flex;
+  align-items: center;
   background: rgb(234, 245, 170);
   z-index: 1;
+
   box-shadow: 2px 1px 6px rgb(169, 195, 20);
-  align-items: center;
-  transition: 0.3s;
 }
-.navbar:hover {
-  background: linear-gradient(0deg, rgb(209, 226, 113), rgb(169, 195, 20));
-  animation: navbar 5s ease-in-out infinite;
-  background-size: 400% 400%;
-  box-shadow: 2px 4px 5px rgb(169, 195, 20);
-}
-@keyframes navbar {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+
 .navbar-center {
   width: 100%;
   max-width: 1170px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1.5rem;
 }
 .nav-icon {
   font-size: 1.5rem;
@@ -72,16 +58,7 @@ body {
   color: var(--mainWhite);
 }
 /* --------------- End of Navbar ---------------- */
-/* Navbar for categories */
-/* .categories {
-  width: 100%;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
-}
-.ctg-align {
-  margin-left: 33.3%;
-} */
 .best-sellers {
   font-family: "Fira Sans", sans-serif;
   margin-top: 50px;
@@ -203,7 +180,7 @@ body {
   letter-spacing: var(--mainSpacing);
   font-weight: bold;
   transition: var(--mainTransition);
-  transform: translateX(100%);
+  transform: translateX(102%);
   cursor: pointer;
 }
 .bag-btn:hover {
