@@ -55,12 +55,12 @@ class UI {
     product.forEach(product =>{
 result +=
 `<article class="products">
+
           <div class="img-container">
             <img
               src="images/download.png"
               alt="product"
               class="product-img"/>
-
 <button class="bag-btn" data-id=${product.id}>
 
               <i class="fas fa-shopping-cart"></i>
@@ -94,6 +94,7 @@ buttons.forEach(
   // console.log(id);
   let inCart=cart.find(item=>item.id===id);
 if(inCart){
+
   button.innerText="Item in cart ";
   button.disabled=true;//disables the buttton
    
@@ -157,7 +158,7 @@ addCartItem(item){
 
             <div>
               <h4>${item.title}</h4>
-              <h5>${item.price}</h5>
+              <h5>&#8377; ${item.price}/</h5>
             <span class="remove-item" data-id=${item.id}>Remove</span>
             </div>
             <div>
@@ -210,6 +211,7 @@ cartContent.addEventListener('click',event=>{
 
     this.removeItem(id);
   }else if(event.target.classList.contains("fa-chevron-up")){
+    
     let addAmount=event.target;
     let id=addAmount.dataset.id;
     let tempItem=cart.find(item=>item.id===id);
