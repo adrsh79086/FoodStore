@@ -137,6 +137,9 @@ body {
   transition: var(--mainTransition);
   cursor: pointer;
 }
+.purchase-btn {
+  display: block;
+}
 .banner-btn:hover {
   background: transparent;
   color: var(--primaryColor);
@@ -144,7 +147,9 @@ body {
 /* --------------- End of Hero ---------------- */
 
 /* --------------- Products ---------------- */
-
+.product {
+  border: #00ff7f solid 2px;
+}
 .products {
   padding: 2rem 0;
 }
@@ -180,7 +185,6 @@ body {
   letter-spacing: var(--mainSpacing);
   font-weight: bold;
   transition: var(--mainTransition);
-  transform: translateX(102%);
   cursor: pointer;
 }
 .bag-btn:hover {
@@ -347,4 +351,164 @@ body {
   line-height: 200px;
   font-size: 80px;
   color: black;
+}
+/*-- Purchase input */
+.form {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+.info {
+  margin-left: 33%;
+}
+/*--purchase input end */
+/* slidebar */
+.sidebar-toggle {
+  top: 2rem;
+  right: 3rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: hsl(205, 78%, 60%);
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.sidebar-toggle:hover {
+  color: var(--clr-primary-7);
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+.close-btn {
+  font-size: 1.75rem;
+  background: transparent;
+  border-color: transparent;
+  color: hsl(205, 78%, 60%);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  color: hsl(360, 67%, 44%);
+  border: none;
+}
+.close-btn:hover {
+  color: hsl(360, 71%, 66%);
+  transform: rotate(360deg);
+}
+
+.links a {
+  display: block;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  padding: 1rem 1.5rem;
+  color: hsl(210, 22%, 49%);
+  transition: all 0.3s linear;
+}
+.links a:hover {
+  background: hsl(205, 86%, 81%);
+  color: hsl(205, 78%, 60%);
+  padding-left: 1.75rem;
+}
+.social-icons {
+  justify-self: center;
+  display: flex;
+  padding-bottom: 2rem;
+}
+.social-icons a {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  color: hsl(205, 78%, 60%);
+  transition: all 0.3s linear;
+}
+.social-icons a:hover {
+  color: hsl(205, 86%, 17%);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+  box-shadow: hsl(360, 67%, 44%);
+  transition: all 0.3s linear;
+  transform: translate(-100%);
+}
+.show-sidebar {
+  transform: translate(0);
+}
+@media screen and (min-width: 676px) {
+  .sidebar {
+    width: 400px;
+  }
 }

@@ -67,8 +67,8 @@ result +=
               Add
             </button>
           </div>
-          <h3>Product Name </h3>
-          <h4>Price  </h4>
+          <h3>${product.title}</h3>
+          <h4>&#8377; ${product.price} </h4>
         
 </article>`
         
@@ -87,20 +87,20 @@ const buttons=[...document.querySelectorAll(".bag-btn")];
 
 buttonsDOM=buttons;
 
-
 buttons.forEach(
-  button=>{
-  let id=button.dataset.id;
-  // console.log(id);
-  let inCart=cart.find(item=>item.id===id);
+  button => {
+  let id = button.dataset.id;
+  //  console.log(id);
+  let inCart=cart.find( item => item.id === id);
+
 if(inCart){
 
-  button.innerText="Item in cart ";
+  button.innerText="In Cart";
   button.disabled=true;//disables the buttton
    
-}
+}else{
 
-button.addEventListener('click',(event)=>{
+button.addEventListener('click',event=>{
     // console.log(event);
 event.target.innerText="In cart";
 event.target.disabled=true;
@@ -124,7 +124,7 @@ this.addCartItem(cartItem);
 
 
 
-  });
+  });}
 
 
 });
@@ -158,7 +158,7 @@ addCartItem(item){
 
             <div>
               <h4>${item.title}</h4>
-              <h5>&#8377; ${item.price}/</h5>
+              <h5>&#8377; ${item.price}/pack</h5>
             <span class="remove-item" data-id=${item.id}>Remove</span>
             </div>
             <div>
