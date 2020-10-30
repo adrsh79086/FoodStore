@@ -1,4 +1,26 @@
 
+   var firebaseConfig = {
+        apiKey: "AIzaSyDmxT32LVO0gJgykLU5D-Xt8noVl6m-O-I",
+        authDomain: "prakrati-63d43.firebaseapp.com",
+        databaseURL: "https://prakrati-63d43.firebaseio.com",
+        projectId: "prakrati-63d43",
+        storageBucket: "prakrati-63d43.appspot.com",
+        messagingSenderId: "900253623176",
+        appId: "1:900253623176:web:08e2d2a5ed9f84f3b8d03d",
+        measurementId: "G-NPCN0PZYCS"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+	firebase.analytics();
+	
+  console.log(firebase);
+ 
+ var database= firebase.database();
+ var ref= database.ref('Customer Details');
+ 
+ 
+
+
 
 const form = document.getElementById('form');
 const username = document.getElementById('username');
@@ -9,11 +31,7 @@ form.addEventListener('submit', e => {
 a=0;
 	e.preventDefault();
 	checkInputs();
-	if(a==0){
-  alert("Thanks for choosing us");
-	}else{
-		alert("Wrong input");
-	}
+
 });
 
 function checkInputs() {
@@ -27,7 +45,6 @@ function checkInputs() {
 		a++;
 	} else {
 		setSuccessFor(username);
-		console.log(usernameValue);
 	}
 	
 	// if(emailValue === '') {
@@ -53,8 +70,22 @@ a++;
 		setSuccessFor(password);
 	}
 
+	if(a==0){
 
-	
+var data={
+ 
+  name1:usernameValue,
+     phone_no:passwordValue
+ }
+ ref.push(data);
+
+  alert("Thanks for choosing us");
+
+
+	}
+	else{
+		alert("Wrong input");
+	}
 
 }
 
